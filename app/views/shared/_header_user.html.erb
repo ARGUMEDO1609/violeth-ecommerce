@@ -1,0 +1,10 @@
+
+    <nav class="fixed w-full top-0 bg-gray-600 z-10 py-4">
+              <%= link_to root_path do %>
+              <h1 class text-3xl font-bold text-white><%= t('app_name') %></h1>
+              <% end %> 
+              <div class="hidden sm:block">
+                <%= render partial: "shared/items" %>
+              </div>
+    </nav>
+  
