@@ -14,3 +14,131 @@
  *= require_self
  */
  @import "font-awesome";
+
+ .table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+  }
+  
+  .table caption {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 8px 0px;
+  }
+  
+  .table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+  }
+  
+  .table th, .table td {
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .table thead th{ 
+    text-transform: uppercase;
+    background-color: #ddd;
+  }
+  
+  .table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .table tbody td:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .table {
+        border: 0px;
+    }
+    .table caption {
+        font-size: 22px;
+    }
+    .table thead {
+        display: none;
+    }
+    .table tr {
+        margin-bottom: 8px;
+        border-bottom: 4px solid #ddd;
+        display: block;
+    }
+    .table th, .table td {
+        font-size: 12px;
+    }
+    .table td {
+        display: block;
+        border-bottom: 1px solid #ddd;
+        text-align: right;
+    }
+    .table  td:last-child {
+        border-bottom: 0px;
+    }
+    .table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        float: left;
+    }
+  }
+  .pagy {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+    a {
+      font-weight: bold;
+      border: 1px solid rgb(52, 52, 52);
+      padding: 5px 5px;
+      border-radius: 5px;
+    }
+  
+  
+    a[aria-label="Previous"][aria-disabled="true"] {
+      background: #ddd;
+      color: black;
+      padding: 5px 5px;
+      border: 1px solid #ddd;
+      font-weight: bold;
+    }
+    
+    a[aria-label="Previous"]:not([aria-disabled="true"]) {
+      background: rgb(17, 121, 249);
+      color: white;
+      padding: 5px 5px;
+      border: 1px solid #ddd;
+      font-weight: bold;
+    }
+  
+    a[aria-label="Next"][aria-disabled="true"] {
+      background: #ddd;
+      color: black;
+      padding: 5px 5px;
+      border: 1px solid #ddd;
+      font-weight: bold;
+    }
+    
+    /* Estilo cuando aria-disabled no es "true" */
+    a[aria-label="Next"]:not([aria-disabled="true"]) {
+      background: rgb(17, 121, 249);
+      color: white;
+      padding: 5px 5px;
+      border: 1px solid #ddd;
+      font-weight: bold;
+    }
+  
+    .current {
+      background: rgb(17, 121, 249);
+      color: white;
+      padding: 5px 5px;
+      border: 1px solid #ddd;
+      font-weight: bold;
+    }
+  }
